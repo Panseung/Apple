@@ -133,3 +133,17 @@
     3. 빈 블록
   * 해결 방법은 인위적으로 두 요소의 테두리를 분리시키면 됨 (ex: padding)
 
+* `<body>` 태그에는 기본적으로 margin이 있다.
+  따라서 화면에 꽉 채우고 싶은 경우
+  `<body style="margin: 0px;">`과 같이 작성하면 된다.
+
+* 요소의 좌표 이동
+
+  1. position 부여 (부여하는 순간 원래 자신의 위치만 차지하고
+     						이동한 위치의 실질적인 공간차지 x -> 붕 뜸)
+     * position 종류
+       1. relative: 원래 자기자신의 위치 기준
+       2. fixed: 화면 기준으로 고정 (navbar, footer)
+       3. absolute: 내 부모 태그가 기준(단, 부모가 relative여야 함)
+          absolute 가운데 정렬하기
+          left: 0; right: 0; margin: auto; width ~~px;
