@@ -5,7 +5,7 @@
 * HTML : markup Language
   * Markup Language : 자료의 구조를 표현하기 위한 언어
     									자료를 어디에 어떻게 배치할지 결정
-  
+
 * `<p></p>` : p태그 (paragraph, 본문)
 
 * `<span></span>`: 글자를 감쌀수 있는 의미 없는 태그 (일부 글자에 스타일 or class 줄 때)
@@ -17,21 +17,21 @@
 * 1. 모든 요소는 tag안에 넣을 것
   2. 일부 tag는 속성 가짐
   3. 태그 안에 태그 가능
-  
+
 * 이미지 가운데 정렬하는 style
   * display: block; 
   * margin-left: auto; 
   * margin-right: auto;
-  
+
 * 자간 간격 조절하는 style                     !!!!!!!!!!!!!
   * letter-spacing
-  
+
 * 선택자(selector)우선 순위 (스타일이 겹칠 경우)
   1. 인라인 스타일 (태그에 직접 작성 ex:`<p style=""></p>`)
   2. id
   3. class
   4. tag
-  
+
 * float를 앞에 썼고 다음 div쓸꺼면
 
   * float요소들 뒤에 오는 첫 요소 style에
@@ -94,4 +94,42 @@
   * a:visited   방문한 뒤 상태
   * a:hover     마우스 올렸을 때
   * a:active     클릭했을 때
+
+* background-image: url(../shoes.jpg);
+  해당 요소가 차지하는 배경에 이미지 넣기
+
+* background-size: 100%;
+  배경 이미지 사이즈 조절
+  이 때 width를 100%, height: 200px과 같이 줄 경우
+  높이는 200px로 고정된 상태로 좌우 너비에 따라 사진 크기가 변하는데
+  이때 좌우 너비가 많이 줄어들면 사진이 자동으로 반복됨
+
+* 이 때 background-repeat: no-repeat; 를 통해 위와 같은 문제 해결 가능
+  하지만 아래 반복되어 나타나던 자리만큼 칸은 차지
+
+* 이 때 background-size: cover / contain 을 통해 해결 가능
+
+  * cover : 배경 잘려도 상관 없으니 배경으로 공간 꽉 채워라
+  * contain : 나 못채워도 상관 없으니 배경사진 잘리면 안된다
+
+* background-position: center;
+
+  * 기본적으로 배경사진의 왼쪽부터 나타나게 되나
+    위와 같은 속성을 통해 중앙부터 혹은 오른쪽부터 조절 가능
+
+* filter: 속성내용
+
+  * 해당 요소에 보정 효과 주기 (밝기, 블러처리, 채도 등)
+  * 단 해당요소 안에 글씨, 버튼 등이 같이 있으면 모두 보정효과 받음
+    따라서 이미지에만 적용할 수 있도록 주의할 것
+
+* margin collapse (마진 상쇄)
+
+  * 여러 블록의 상하 여백은 경우에 따라 제일 큰 여백의 크기를 가진
+    단일 여백으로 결합(상쇄) 된다. 이를 여백상쇄 라고 한다
+    아래와 같은 세 가지 상황에 발생
+    1. 인접 형제
+    2. 부모와 자손을 분리하는 컨텐츠가 없을 때
+    3. 빈 블록
+  * 해결 방법은 인위적으로 두 요소의 테두리를 분리시키면 됨 (ex: padding)
 
