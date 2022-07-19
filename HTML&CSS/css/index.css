@@ -33,14 +33,17 @@
 }
 
 .left-box {
-    float: left;
+    /* float: left; */
+    display: inline-block;
     width: 30%;
     height: 200px;
     background-color: beige;
+    vertical-align: top;
 }
 
 .right-box {
-    float: left;
+    /* float: left; */
+    display: inline-block;
     width: 70%;
     height: 200px;
     background-color: blueviolet;
@@ -50,5 +53,5 @@
     width: 100%;
     height: 100px;
     background-color: brown;
-    clear: both;
+    /* clear: both; */
 }
