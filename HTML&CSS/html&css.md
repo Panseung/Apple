@@ -76,5 +76,22 @@
       
       ![inline-block, baseline](md_images/inline-block, baseline.png)
 
-* ㅇ
+* .navbar li {
+  } : navbar class 밑에 있는 모든 li '자손'
+
+* .navbar > li {
+  } : navbar class 밑에 있는 직계 li '자식'
+
+* a 태그 밑줄 없애기 : text-decoration: none;
+
+* 눌렀던 링크 파란색 표시 안하기
+
+* a 태그
+
+  * 사용할 수 있는 종류 아래와 같이 4가지 이며
+    css에 선언하게 된다면 반드시 이 순서대로 작성할 것
+  * a:link		해당 링크를 방문하기 전 상태
+  * a:visited   방문한 뒤 상태
+  * a:hover     마우스 올렸을 때
+  * a:active     클릭했을 때
 
