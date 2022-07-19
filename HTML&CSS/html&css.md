@@ -23,6 +23,21 @@
   2. id
   3. class
   4. tag
+  
+* float를 앞에 썼고 다음 div쓸꺼면
+
+  * float요소들 뒤에 오는 첫 요소 style에
+    ``` css
+    .class {
+        clear: both;
+    }
+    ```
+
+    주면 해결됨
+    clear: left or clear: right 두개가 있는데 
+    둘 다 해결하는것이 both
+
+* 
 
 ​	
 
