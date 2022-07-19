@@ -18,7 +18,11 @@
   * margin-right: auto;
 * 자간 간격 조절하는 style                     !!!!!!!!!!!!!
   * letter-spacing
-* 
+* 선택자(selector)우선 순위 (스타일이 겹칠 경우)
+  1. 인라인 스타일 (태그에 직접 작성 ex:`<p style=""></p>`)
+  2. id
+  3. class
+  4. tag
 
 ​	
 
