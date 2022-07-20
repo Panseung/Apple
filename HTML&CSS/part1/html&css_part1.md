@@ -37,8 +37,8 @@
 
   
 
-* 자간 간격 조절하는 style                     !!!!!!!!!!!!!
-  * letter-spacing
+* letter-spacing                   !!!!!!!!!!!!!
+  * 자간 간격 조절하는 style  
 
   
 
@@ -279,3 +279,56 @@
 ​		vertical-align: top / middle / bottom  (테이블은 이 3개만 가능, 다른곳에서는 더 많은 옵션 가능)
 ​		vertical-align은 inline/inline-block 요소들이 나란히 있을 때
 ​		이들을 세로정렬 할 때 씀
+
+
+
+- nth-child
+
+  - 여러 요소를 찾은 다음 원하는 n번째 요소에만 스타일을 주는 방법
+
+  - ```css
+    .parent child:nth-child(2) {
+        ~~~
+    }
+    parent의 자식인 child 중 두 번째 child에만 적용
+    
+    .asd efg:nth-child(even) {
+        ~~~
+    }
+    asd의 자식인 efg들 중 짝수번째 efg만 스타일 적용
+    
+    .parent child:nth-child(3n+1) {
+        ~~~
+    }
+    4, 7, 10 ~~
+    ```
+
+
+
+
+
+- pseudo-class : 여러 상태에 따른 스타일 지정
+  반드시 아래의 순서대로 적용할 것
+
+  - hover
+  - focus
+  - active
+
+  이 외에도 많음
+  ```css
+  :any-link /*방문 전, 방문 후 링크 한번에 선택할 때*/
+  :playing /*동영상, 음성이 재생중일 때*/
+  :paused /*동영상, 음성이 정지시*/
+  :autofill /*input의 자동채우기 스타일*/
+  :disabled /*disabled된 요소 스타일*/
+  :checked /*체크박스나 라디오버튼 체크되었을 때*/
+  :blank /*input이 비었을 때*/
+  :valid /*이메일 input 등에 이메일 형식이 맞을 경우*/
+  :invalid /*이메일 input 등에 이메일 형식이 맞지 않을 경우*/
+  :required /*필수로 입력해야할 input의 스타일*/
+  :nth-child(n) /*n번째 자식 선택*/
+  :first-child /*첫째 자식 선택*/
+  :last-child /*마지막 자식 선택*/
+  ```
+
+  
