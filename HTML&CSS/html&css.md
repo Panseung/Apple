@@ -147,3 +147,31 @@
        3. absolute: 내 부모 태그가 기준(단, 부모가 relative여야 함)
           absolute 가운데 정렬하기
           left: 0; right: 0; margin: auto; width ~~px;
+  
+* width, content, padding, border
+
+  * width는 content의 영역이지 padding과 border는 이 밖의 영역이다.
+  * 따라서 width를 padding, border를 포함하여 설정해주고 싶을 때는
+    box-sizing: border-box; 를 줘야 한다.
+
+* 보통 css파일을 만들고 난 후 아래와 같이 코드를 작성하고 시작함
+  ```css
+  div {
+      box-sizing: border-box;
+  }
+  
+  body {
+      margin: 0px;
+  }
+  ```
+
+  숙련자들은 브라우저 호환성 이슈를 해결하기 위한 클래스들 부터 작성하고 시작함
+
+* selector 문법 (조건)
+  ```css
+  input[type=text] {
+      ~~~
+  }
+  ```
+
+  위와 같이 작성하면 type이 text인 input에만 style이 적용됨
