@@ -27,4 +27,13 @@
   background: white;
   border: none;
   border-radius: 10px;
+  cursor: pointer;
+}
+
+.main-btn:hover {
+  background-color: wheat;
+}
+
+.main-btn:active {
+  background-color: rgb(154, 166, 111);
 }
