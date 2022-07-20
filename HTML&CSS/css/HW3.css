@@ -1,0 +1,79 @@
+.container {
+  padding: 150px;
+}
+
+h1,
+p {
+  color: rgb(124, 148, 176);
+}
+
+p {
+  font-size: 20px;
+}
+
+table {
+  width: 100%;
+  background-color: white;
+  border-collapse: collapse;
+  border-radius: 10px;
+}
+
+.item {
+  width: 55%;
+}
+
+thead,
+td {
+  text-align: center;
+}
+
+td {
+  width: 15%;
+}
+
+tbody tr {
+  border-top: 1px solid black;
+}
+
+img {
+  float: left;
+  width: 30%;
+  margin-right: 20px;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.total {
+  color: rgb(67, 67, 129);
+}
+
+.text-left {
+  text-align: left;
+}
+
+.brand {
+  font-size: 36px;
+  font-weight: 900;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+}
+
+button {
+  float: right;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(67, 67, 129);
+  width: 300px;
+  height: 60px;
+}
+
+.my-color {
+  color: rgb(67, 67, 129);
+}
+
+button p {
+  color: white;
+}
