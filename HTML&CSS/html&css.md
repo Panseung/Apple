@@ -6,31 +6,49 @@
   * Markup Language : 자료의 구조를 표현하기 위한 언어
     									자료를 어디에 어떻게 배치할지 결정
 
+  
+  
 * `<p></p>` : p태그 (paragraph, 본문)
+
+
 
 * `<span></span>`: 글자를 감쌀수 있는 의미 없는 태그 (일부 글자에 스타일 or class 줄 때)
 
+
+
 * `<h1></h1>`: h태그 (heading, h1 ~ h6)
 
+
+
 * `<ul>, <ol>, <li>`: unordered, ordered(자동번호), list item 태그
+
+
 
 * 1. 모든 요소는 tag안에 넣을 것
   2. 일부 tag는 속성 가짐
   3. 태그 안에 태그 가능
+
+
 
 * 이미지 가운데 정렬하는 style
   * display: block; 
   * margin-left: auto; 
   * margin-right: auto;
 
+  
+
 * 자간 간격 조절하는 style                     !!!!!!!!!!!!!
   * letter-spacing
+
+  
 
 * 선택자(selector)우선 순위 (스타일이 겹칠 경우)
   1. 인라인 스타일 (태그에 직접 작성 ex:`<p style=""></p>`)
   2. id
   3. class
   4. tag
+
+  
 
 * float를 앞에 썼고 다음 div쓸꺼면
 
@@ -44,6 +62,8 @@
     주면 해결됨
     clear: left or clear: right 두개가 있는데 
     둘 다 해결하는것이 both
+
+  
 
 * display
 
@@ -76,15 +96,17 @@
       
       ![inline-block, baseline](md_images/inline-block, baseline.png)
 
+  
+
 * .navbar li {
   } : navbar class 밑에 있는 모든 li '자손'
 
 * .navbar > li {
   } : navbar class 밑에 있는 직계 li '자식'
 
-* a 태그 밑줄 없애기 : text-decoration: none;
 
-* 눌렀던 링크 파란색 표시 안하기
+
+* a 태그 밑줄 없애기 : text-decoration: none;
 
 * a 태그
 
@@ -95,8 +117,12 @@
   * a:hover     마우스 올렸을 때
   * a:active     클릭했을 때
 
+  
+
 * background-image: url(../shoes.jpg);
   해당 요소가 차지하는 배경에 이미지 넣기
+
+
 
 * background-size: 100%;
   배경 이미지 사이즈 조절
@@ -104,24 +130,34 @@
   높이는 200px로 고정된 상태로 좌우 너비에 따라 사진 크기가 변하는데
   이때 좌우 너비가 많이 줄어들면 사진이 자동으로 반복됨
 
+
+
 * 이 때 background-repeat: no-repeat; 를 통해 위와 같은 문제 해결 가능
   하지만 아래 반복되어 나타나던 자리만큼 칸은 차지
+
+
 
 * 이 때 background-size: cover / contain 을 통해 해결 가능
 
   * cover : 배경 잘려도 상관 없으니 배경으로 공간 꽉 채워라
   * contain : 나 못채워도 상관 없으니 배경사진 잘리면 안된다
 
+  
+
 * background-position: center;
 
   * 기본적으로 배경사진의 왼쪽부터 나타나게 되나
     위와 같은 속성을 통해 중앙부터 혹은 오른쪽부터 조절 가능
+
+  
 
 * filter: 속성내용
 
   * 해당 요소에 보정 효과 주기 (밝기, 블러처리, 채도 등)
   * 단 해당요소 안에 글씨, 버튼 등이 같이 있으면 모두 보정효과 받음
     따라서 이미지에만 적용할 수 있도록 주의할 것
+
+  
 
 * margin collapse (마진 상쇄)
 
@@ -133,9 +169,13 @@
     3. 빈 블록
   * 해결 방법은 인위적으로 두 요소의 테두리를 분리시키면 됨 (ex: padding)
 
+  
+
 * `<body>` 태그에는 기본적으로 margin이 있다.
   따라서 화면에 꽉 채우고 싶은 경우
   `<body style="margin: 0px;">`과 같이 작성하면 된다.
+
+
 
 * 요소의 좌표 이동
 
@@ -147,12 +187,16 @@
        3. absolute: 내 부모 태그가 기준(단, 부모가 relative여야 함)
           absolute 가운데 정렬하기
           left: 0; right: 0; margin: auto; width ~~px;
-  
+       
+       
+
 * width, content, padding, border
 
   * width는 content의 영역이지 padding과 border는 이 밖의 영역이다.
   * 따라서 width를 padding, border를 포함하여 설정해주고 싶을 때는
     box-sizing: border-box; 를 줘야 한다.
+
+  
 
 * 보통 css파일을 만들고 난 후 아래와 같이 코드를 작성하고 시작함
   ```css
@@ -167,6 +211,8 @@
 
   숙련자들은 브라우저 호환성 이슈를 해결하기 위한 클래스들 부터 작성하고 시작함
 
+
+
 * selector 문법 (조건)
   ```css
   input[type=text] {
@@ -175,6 +221,8 @@
   ```
 
   위와 같이 작성하면 type이 text인 input에만 style이 적용됨
+
+  
 
 * selector 문법 (여러개 동시 선택 가능)
 
@@ -186,6 +234,8 @@
 
   위처럼 여러개의 selector 동시에 스타일링 가능
 
+  
+
 * label 태그
 
   ```html
@@ -195,3 +245,37 @@
 
   위와 같이 input의 id와 label의 for을 맞춰주면
   'Subscribe' 글자를 클릭해도 checkbox가 클릭될 수 있음
+
+
+
+- table 태그
+
+  ```html
+  <table>
+      <tr>
+      	<td></td>
+          <td></td>
+          <td></td>
+      </tr>
+  </table>
+  ```
+
+  table : 표
+
+  tr : 가로 행
+
+  td : 세로 열 (th : 제목용 세로 열)
+
+  제목 행은 `<thead>` 안에
+  일반 행은 `<tbody>` 안에 
+  넣으면 좋음
+  기능상 차이는 없고 코드 가독성을 위한 분류
+
+​		`<table>` 태그는 기본적으로 틈이 존재하는데 
+​		이를 없애려면 border-collapse: collapse;
+​		스타일을 주면 해결
+
+​		셀 안의 요소 상하정렬
+​		vertical-align: top / middle / bottom  (테이블은 이 3개만 가능, 다른곳에서는 더 많은 옵션 가능)
+​		vertical-align은 inline/inline-block 요소들이 나란히 있을 때
+​		이들을 세로정렬 할 때 씀
