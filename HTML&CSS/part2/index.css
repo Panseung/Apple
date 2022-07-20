@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "작명~~";
+  src: url("폰트 파일 경로");
+}
+
+body {
+  font-family: "작명~~";
+}

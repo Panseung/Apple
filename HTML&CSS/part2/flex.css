@@ -1,0 +1,21 @@
+.flex-container {
+  display: flex;
+}
+
+.flex-item {
+  width: 100px;
+  height: 100px;
+  background-color: gray;
+  margin: 5px;
+}
+
+.nav {
+  display: flex;
+  background-color: orangered;
+}
+
+.nav-item {
+  color: white;
+  font-size: 20px;
+  margin: 20px;
+}
