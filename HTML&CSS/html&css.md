@@ -175,3 +175,23 @@
   ```
 
   위와 같이 작성하면 type이 text인 input에만 style이 적용됨
+
+* selector 문법 (여러개 동시 선택 가능)
+
+  ```css
+  div, input, textarea {
+      box-sizing: border-box;
+  }
+  ```
+
+  위처럼 여러개의 selector 동시에 스타일링 가능
+
+* label 태그
+
+  ```html
+  <input id='sub' type='checkbox'>
+  <label for='sub'>Subscribe</label>
+  ```
+
+  위와 같이 input의 id와 label의 for을 맞춰주면
+  'Subscribe' 글자를 클릭해도 checkbox가 클릭될 수 있음
