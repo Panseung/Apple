@@ -102,3 +102,11 @@
 
 - props는 부모에서 자식으로만 전송 가능!!!
 
+- 부모요소로 이벤트 가는거 막기 (e.stopPropagation)
+  ```react
+  <span onClick={(e) => { e.stopPropagation();}}>
+    따봉
+  </span>
+  ```
+
+  

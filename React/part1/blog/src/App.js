@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const post = "강남 우동 맛집";
   const [title, setTitle] = useState([
     "남자코트 추천",
     "강남우동 맛집",
@@ -12,6 +11,15 @@ function App() {
   const [idx, setIdx] = useState(0);
 
   const [like, setLike] = useState([0, 0, 0]);
+
+  const [inputVal, setInputVal] = useState("");
+
+  const submit = () => {
+    title.push(inputVal);
+    like.push(0);
+    setInputVal("");
+    document.getElementById("input_box").value = null;
+  };
 
   return (
     <div className="App">
@@ -30,7 +38,8 @@ function App() {
               {d}
               <span
                 style={{ cursor: "pointer" }}
-                onClick={() => {
+                onClick={(e) => {
+                  e.stopPropagation();
                   const tmp = [...like];
                   tmp[i] += 1;
                   setLike(tmp);
@@ -39,11 +48,43 @@ function App() {
                 👍
               </span>
               {like[i]}
+              <span
+                onClick={() => {
+                  const tmp = [];
+                  title.map((d2, i2) => {
+                    return i2 !== i ? tmp.push(d2) : null;
+                  });
+                  setTitle(tmp);
+
+                  const tLike = [];
+                  like.map((d2, j) => {
+                    return j !== i ? tLike.push(d2) : null;
+                  });
+                  setLike(tLike);
+                }}
+                style={{ color: "red", cursor: "pointer" }}
+              >
+                삭제
+              </span>
             </h4>
             <p>2월 17일 발행</p>
           </div>
         );
       })}
+
+      <input
+        id="input_box"
+        onChange={(e) => {
+          setInputVal(e.target.value);
+        }}
+      ></input>
+      <button
+        onClick={() => {
+          submit();
+        }}
+      >
+        입력
+      </button>
       <Modal title={title[idx]}></Modal>
     </div>
   );
