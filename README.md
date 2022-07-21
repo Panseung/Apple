@@ -16,6 +16,21 @@
  		- start : 22-07-19
  	2. JavaScript/jQuery
  	3. React
+ 		- start : 22-07-21
  	4. JS ES6
  	5. TS
  	6. NodeJS + MongoDB
+
+
+
+## 3. 학습 결과물
+
+
+
+### HTML&CSS
+
+![part1_ex2](part1_ex2.png)
+
+
+
+![part1_ex1](part1_ex1.png)
