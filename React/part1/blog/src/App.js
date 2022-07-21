@@ -9,6 +9,8 @@ function App() {
     "파이썬독학",
   ]);
 
+  const [idx, setIdx] = useState(0);
+
   const [like, setLike] = useState([0, 0, 0]);
 
   return (
@@ -16,62 +18,43 @@ function App() {
       <div className="black-nav">
         <h4>블로그임</h4>
       </div>
-      <div className="list">
-        <h4>
-          {title[0]}
-          <span
-            style={{ cursor: "pointer" }}
-            onClick={() => {
-              setLike([like[0] + 1, like[1], like[2]]);
-            }}
-          >
-            👍
-          </span>
-          {like[0]}
-        </h4>
-        <p>2월 17일 발행</p>
-      </div>
-      <div className="list">
-        <h4>
-          {title[1]}
-          <span
-            style={{ cursor: "pointer" }}
-            onClick={() => {
-              setLike([like[0], like[1] + 1, like[2]]);
-            }}
-          >
-            👍
-          </span>
-          {like[1]}
-        </h4>
-        <p>2월 17일 발행</p>
-      </div>
-      <div className="list">
-        <h4>
-          {title[2]}
-          <span
-            style={{ cursor: "pointer" }}
-            onClick={() => {
-              setLike([like[0], like[1], like[2] + 1]);
-            }}
-          >
-            👍
-          </span>
-          {like[2]}
-        </h4>
-        <p>2월 17일 발행</p>
-      </div>
-      <Modal></Modal>
+      {title.map((d, i) => {
+        return (
+          <div className="list" key={i}>
+            <h4
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                setIdx(i);
+              }}
+            >
+              {d}
+              <span
+                style={{ cursor: "pointer" }}
+                onClick={() => {
+                  const tmp = [...like];
+                  tmp[i] += 1;
+                  setLike(tmp);
+                }}
+              >
+                👍
+              </span>
+              {like[i]}
+            </h4>
+            <p>2월 17일 발행</p>
+          </div>
+        );
+      })}
+      <Modal title={title[idx]}></Modal>
     </div>
   );
 }
 
-function Modal() {
+function Modal(props) {
   return (
     <div className="modal">
-      <h4>제목</h4>
-      <p>날짜</p>
-      <p>상세내용</p>
+      <h4>{props.title}</h4>
+      <p>{props.date}</p>
+      <p>{props.content}</p>
     </div>
   );
 }
