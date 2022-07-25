@@ -137,3 +137,24 @@
   결론
 
   - 무조건은 없고 상황에 따라 css를 쓰거나 styled-component를 쓰거나 상관없음
+
+
+
+- useEffect()
+  쓰면 두번 실행되는데 이는 디버깅을 위한 것임
+  실제 사이트 발행하면 한 번 실행될 예정
+  두 번 안나타나게 하려면 index.js 에서 StrictMode제거하면 됨
+  !!! 실행시점 : html이 모두 렌더링 된 이후 useEffect안의 코드가 실행
+
+  - 빡통식 정리
+    ```react
+    useEffect (() => {})				재렌더링마다 코드 실행
+    useEffect (() => {}, [])			최초 mount시 1회 코드 실행
+    useEffect (() => {					unmount시 1회 코드 실행
+        return () => {
+            
+        }
+    })
+    ```
+
+    
