@@ -1,12 +1,11 @@
-import data from "./data";
 import Item from "./item";
-export default function Main() {
+export default function Main(props) {
   return (
     <div>
       <div className="main-bg"></div>
       <div className="container">
         <div className="row">
-          {data.map((d, i) => {
+          {props.shoes.map((d, i) => {
             return <Item data={d} idx={i} key={i}></Item>;
           })}
         </div>
