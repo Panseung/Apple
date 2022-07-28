@@ -10,6 +10,7 @@ export default function Main(props) {
           })}
         </div>
       </div>
+      <button onClick={props.btn}>n1</button>
     </div>
   );
 }

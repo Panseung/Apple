@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+}
+
+.shop-bg {
+  background-color: #eee;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
