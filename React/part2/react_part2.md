@@ -158,3 +158,45 @@
     ```
 
     
+
+
+
+- axios (**A**synchronous **J**avaScript **A**nd **X**ML: 비동기 자바스크립트와 XML)
+
+  - 서버와 통신하기 위해 XMLHttpRequest 객체를 사용하는 것
+
+  - 가장 큰 특징은 페이지 전체를 리프레시 하지 않고 수행되는 '비동기성'
+
+  - ajax : 요청을 보내기 위한 라이브러리
+
+    1. 설치
+       ```powershell
+       npm install axios
+       ```
+
+    2. js 파일에
+       ```react
+       import 	axios from 'axios'
+       
+       ~~~
+           
+           axios.get('url')
+       ```
+
+  - !!!!!!! 로딩창 띄우는 방법
+    ```react
+    useEffect(() => {
+        로딩중 UI 띄우기
+        axios
+        	.get('url')
+        	.then((res) =>{
+            	console.log(res)
+            	로딩 UI 숨기기
+        	})
+        	.catch((err) => {
+            	console.log(err)
+        	})
+    })
+    ```
+
+    

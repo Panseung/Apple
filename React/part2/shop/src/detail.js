@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
-
+import { Nav } from "react-bootstrap";
 const YellowBtn = styled.button`
   background: yellow;
   color: black;
@@ -16,13 +16,19 @@ export default function Detail(props) {
     }, 2000);
   });
 
-  const [noNumber, setNoNumber] = useState(false);
+  const [noNumber, setNoNumber] = useState("white");
+
+  const [tab, setTab] = useState(1);
+
+  const [val, setVal] = useState("");
   return (
     <div className="container">
       {sec === true ? (
         <div>
-          <YellowBtn></YellowBtn>
-          <h3 style={{ cursor: "pointer" }}> 2초 이내 구매시 할인 </h3>
+          <br></br>
+          <YellowBtn>
+            <h3 style={{ cursor: "pointer" }}> 2초 이내 구매시 할인 </h3>
+          </YellowBtn>
         </div>
       ) : null}
 
@@ -46,25 +52,60 @@ export default function Detail(props) {
           style={{ width: "30%", marginLeft: "auto", marginRight: "auto" }}
           onChange={(e) => {
             if (isNaN(Number(e.target.value))) {
-              setNoNumber(true);
+              setNoNumber("red");
             } else {
-              setNoNumber(false);
+              setNoNumber("white");
             }
+            setVal(e.target.value);
           }}
         ></input>
-        {noNumber ? (
-          <h3
-            style={{
-              color: "red",
-              MozUserSelect: "none",
-              MsUserSelect: "none",
-              userSelect: "none",
+        <h3
+          style={{
+            color: noNumber,
+            MozUserSelect: "none", // 파이어폭스 드래그 방지
+            MsUserSelect: "none", // 이건 몰겠다
+            userSelect: "none",
+          }}
+        >
+          숫자가 아닙니다.
+        </h3>
+        <h3>입력: {val}</h3>
+      </div>
+      <Nav variant="tabs" defaultActiveKey="link0">
+        <Nav.Item>
+          <Nav.Link
+            onClick={() => {
+              setTab(1);
             }}
           >
-            숫자만 입력하세요
-          </h3>
-        ) : null}
-      </div>
+            버튼0
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link
+            onClick={() => {
+              setTab(2);
+            }}
+          >
+            버튼1
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link
+            onClick={() => {
+              setTab(3);
+            }}
+          >
+            버튼2
+          </Nav.Link>
+        </Nav.Item>
+      </Nav>
+      <div>{tab === 1 ? <h1> 탭 1번 내용 들어갈 곳</h1> : null}</div>
+      <div>{tab === 2 ? <h1> 탭 2번 내용 들어갈 곳</h1> : null}</div>
+      <div>{tab === 3 ? <h1> 탭 3번 내용 들어갈 곳</h1> : null}</div>
+      <br></br>
+      <br></br>
+      <br></br>
     </div>
   );
 }
