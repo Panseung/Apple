@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <button onclick="myFunc('아이디를 입력해주세요')">버튼1</button>
+  <button onclick="myFunc('비밀번호를 입력해주세요')">버튼2</button>
+
+  <script>
+    const myFunc = (e) => {
+      const myAlert = document.createElement("div")
+      myAlert.innerHTML = e
+      myAlert.className = "alert-box"
+      myAlert.style.display = "block"
+      document.body.appendChild(myAlert)
+    }
+    
+
+  </script>
+
+</body>
+</html>

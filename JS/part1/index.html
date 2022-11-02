@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="alert-box" id="test">알림창임</div>
+  <button onclick="openWithClassName()"">테스트버튼</button>
+  <button onclick="alertChange('block')">버튼</button>
+  <button onclick="alertChange('none')">exit</button>
+
+  <script>
+    const alertChange = (e) => {
+      document.getElementById("test").style.display = e;  
+    }
+    const openWithClassName = () => {
+      document.getElementsByClassName("alert-box")[0].style.display = "block";
+    }
+
+    const alertOpen = () => {
+      document.getElementById("test").style.display = "block";  
+      console.log('나타났다')
+    }
+
+    const alertClose = () => {
+      document.getElementById("test").style.display = "none";  
+      console.log('사라졌다')
+    }
+
+    
+
+  </script>
+
+</body>
+</html>
