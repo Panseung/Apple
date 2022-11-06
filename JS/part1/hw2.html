@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="hw2.css"
+</head>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<body>
+  <div class="black-bg myModal" id="myModal">
+    <div class="white-bg">
+      <h4>로그인하세요</h4>
+      <button class="btn btn-danger" onclick=modalOF()>닫기</button>
+    </div>
+  </div> 
+
+  <button onclick=modalOF()>버튼</button>
+</body>
+
+<script>
+  const modalOF = () => {
+    $('#myModal').toggleClass('show')
+  }
+</script>
+</html>
